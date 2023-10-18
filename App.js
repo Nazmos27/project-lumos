@@ -11,18 +11,35 @@ import AddListModal from './components/ToDoListsPart/AddListModal';
 export default class App extends React.Component{
 
   state={
-    addTodoVisible : true
+    addTodoVisible : false,
+    listData : tempData
   }
 
   toggleAddTodoModal(){
     this.setState({addTodoVisible : !this.state.addTodoVisible})
   }
 
+  renderList = lists => {
+    return <TodoList lists= {lists} updateList ={this.updateList}></TodoList>
+  }
+
+  addList = lists =>{
+    this.setState({listData : [...this.state.listData,{...lists,id: this.state.listData.length+1,todos: []}]})
+  }
+
+  updateList = lists =>{
+    this.setState({
+      listData: this.state.listData.map(item =>{
+        return item.id === lists.id ? lists : item
+      })
+    })
+  }
+
   render(){
     return (
       <View style={styles.container}>
         <Modal animationType='slide' visible={this.state.addTodoVisible} onRequestClose={()=>this.toggleAddTodoModal()}>
-          <AddListModal closeModal = {() => this.toggleAddTodoModal()}></AddListModal>
+          <AddListModal closeModal = {() => this.toggleAddTodoModal()} addList={this.addList}></AddListModal>
         </Modal>
         <View style={{flexDirection: 'row'}}>
           <View style={styles.divider}>
@@ -41,13 +58,11 @@ export default class App extends React.Component{
         </View>
         <View style={{height: 275, paddingLeft: 30}}>
           <FlatList 
-            data={tempData}
+            data={this.state.listData}
             keyExtractor={(item) => item.name}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            renderItem={({item})=>(
-              <TodoList lists={item}></TodoList>
-            )}
+            renderItem={({item})=> this.renderList(item)}
           />
         </View>
       </View>

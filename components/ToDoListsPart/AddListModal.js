@@ -2,6 +2,7 @@ import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, Vi
 import React, { Component } from 'react'
 import {AntDesign} from '@expo/vector-icons'
 import colors from '../../Colors'
+import tempData from '../../tempData'
 
 
 export default class AddListModal extends Component {
@@ -11,13 +12,28 @@ export default class AddListModal extends Component {
         name: '',
         color: this.backgroundColors[0]
     }
-
+   
     renderColor(){
         return this.backgroundColors.map(color => {
             return (
-                <TouchableOpacity></TouchableOpacity>
+                <TouchableOpacity
+                    key={color}
+                    style={[styles.colorSelect , {backgroundColor : color}]}
+                    onPress={()=>{this.setState({color})}}
+                >
+                </TouchableOpacity>
             )
         })
+    }
+
+    createTodo =  () => {
+        const {name,color} = this.state
+
+        const lists= {name,color}
+        this.props.addList(lists)
+
+        this.setState({name : ""})
+        this.props.closeModal()
     }
 
   render() {
@@ -28,8 +44,13 @@ export default class AddListModal extends Component {
         </TouchableOpacity>
         <View style={{alignSelf: 'stretch', marginHorizontal : 32}}>
             <Text style={styles.title}>Create To Do List</Text>
-            <TextInput style={styles.input} placeholder='List Name?' onChangeText={(text) => this.setState({name:text})}></TextInput>
-            <TouchableOpacity style={[styles.button, {backgroundColor:this.state.color}]}>
+            <TextInput style={styles.input} placeholder='List Name?' onChangeText={(text) => this.setState({name:text})}>
+
+            </TextInput>
+            <View style={{flexDirection: 'row', justifyContent: 'space-between', marginVertical: 10}}>
+                {this.renderColor()}
+            </View>
+            <TouchableOpacity style={[styles.button, {backgroundColor:this.state.color}]} onPress={this.createTodo}>
                 <Text style={{color: colors.white, fontWeight : "800", fontSize: 16}}>Create List!</Text>
             </TouchableOpacity>
         </View>
@@ -62,9 +83,13 @@ const styles = StyleSheet.create({
     },
     button:{
         height:50,
-        marginTop: 10,
         borderRadius: 10,
         justifyContent: 'center',
         alignItems:'center'
+    },
+    colorSelect:{
+        width : 30,
+        height : 30,
+        borderRadius : 5,
     }
 })
