@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { FlatList, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import {AntDesign} from '@expo/vector-icons'
 import colors from './Colors'
-import tempData from './tempData';
+// import tempData from './tempData';
 import TodoList from './components/ToDoListsPart/TodoList';
 import React from 'react';
 import AddListModal from './components/ToDoListsPart/AddListModal';
@@ -13,12 +13,13 @@ export default class App extends React.Component{
 
   componentDidMount=() =>{
     this.showTodoFromUserStorage()
+    // this.removeValue()
   }
   
 
   state={
     addTodoVisible : false,
-    listData : tempData
+    listData : []
   }
 
   componentDidUpdate(){
@@ -50,7 +51,7 @@ export default class App extends React.Component{
     try {
       const jsonValue = await AsyncStorage.getItem('todos');
       if(jsonValue != null){
-        console.log(jsonValue)
+        // console.log(jsonValue)
         this.setState({listData:JSON.parse(jsonValue)})
       }
     } catch (e) {
@@ -63,11 +64,21 @@ export default class App extends React.Component{
     try {
       const stringifyTodos = JSON.stringify(todos);
       await AsyncStorage.setItem('todos', stringifyTodos);
-      console.log("success")
+      // console.log("success")
     } catch (e) {
       console.log(e)
       // saving error
     }
+  }
+
+  removeValue = async () => {
+    try {
+      await AsyncStorage.removeItem('todos')
+    } catch(e) {
+      // remove error
+    }
+  
+    console.log('Done.')
   }
   
 

@@ -2,8 +2,7 @@ import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, Vi
 import React, { Component } from 'react'
 import {AntDesign} from '@expo/vector-icons'
 import colors from '../../Colors'
-import tempData from '../../tempData'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+// import tempData from '../../tempData'
 
 
 export default class AddListModal extends Component {
@@ -36,8 +35,6 @@ export default class AddListModal extends Component {
 
         const lists= {name,color}
         this.props.addList(lists)
-        // this.saveTodoToUserDevice(lists)
-
         this.setState({name : ""})
         this.props.closeModal()
     }
