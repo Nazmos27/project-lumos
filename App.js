@@ -6,13 +6,24 @@ import tempData from './tempData';
 import TodoList from './components/ToDoListsPart/TodoList';
 import React from 'react';
 import AddListModal from './components/ToDoListsPart/AddListModal';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default class App extends React.Component{
 
+  componentDidMount=() =>{
+    this.showTodoFromUserStorage()
+  }
+  
+
   state={
     addTodoVisible : false,
     listData : tempData
+  }
+
+  componentDidUpdate(){
+    // this.showTodoFromUserStorage()
+    this.saveTodoToUserDevice(this.state.listData)
   }
 
   toggleAddTodoModal(){
@@ -34,6 +45,31 @@ export default class App extends React.Component{
       })
     })
   }
+
+  showTodoFromUserStorage = async() =>{
+    try {
+      const jsonValue = await AsyncStorage.getItem('todos');
+      if(jsonValue != null){
+        console.log(jsonValue)
+        this.setState({listData:JSON.parse(jsonValue)})
+      }
+    } catch (e) {
+      console.log(e)
+      // error reading value
+    }
+  }
+
+  saveTodoToUserDevice = async (todos) => {
+    try {
+      const stringifyTodos = JSON.stringify(todos);
+      await AsyncStorage.setItem('todos', stringifyTodos);
+      console.log("success")
+    } catch (e) {
+      console.log(e)
+      // saving error
+    }
+  }
+  
 
   render(){
     return (
@@ -63,6 +99,7 @@ export default class App extends React.Component{
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             renderItem={({item})=> this.renderList(item)}
+            keyboardShouldPersistTaps="always"
           />
         </View>
       </View>

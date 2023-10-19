@@ -3,15 +3,20 @@ import React, { Component } from 'react'
 import {AntDesign} from '@expo/vector-icons'
 import colors from '../../Colors'
 import tempData from '../../tempData'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
 export default class AddListModal extends Component {
     backgroundColors = ["#5CD859", "#24A6D9", "#595BD9", "#8022D9", "#D159D8", "#D85963", "#D88559"]
 
+    
+
     state={
         name: '',
         color: this.backgroundColors[0]
     }
+
+    
    
     renderColor(){
         return this.backgroundColors.map(color => {
@@ -31,10 +36,14 @@ export default class AddListModal extends Component {
 
         const lists= {name,color}
         this.props.addList(lists)
+        // this.saveTodoToUserDevice(lists)
 
         this.setState({name : ""})
         this.props.closeModal()
     }
+
+    
+
 
   render() {
     return (

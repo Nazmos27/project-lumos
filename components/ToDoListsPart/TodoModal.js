@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, SafeAreaView, TouchableOpacity, FlatList, KeyboardAvoidingView, TextInput, Platform } from 'react-native'
+import { Text, StyleSheet, View, SafeAreaView, TouchableOpacity, FlatList, KeyboardAvoidingView, TextInput, Platform, Keyboard } from 'react-native'
 import React, { Component } from 'react'
 import {AntDesign ,Ionicons} from '@expo/vector-icons'
 import colors from '../../Colors'
@@ -21,6 +21,12 @@ export default class TodoModal extends React.Component {
 
     addTodo = () => {
         let lists = this.props.lists
+        lists.todos.push({title: this.state.newTodo, completed: false})
+        
+        this.props.updateList(lists)
+        this.setState({newTodo:""})
+
+        Keyboard.dismiss()
     }
 
     renderTodo = (todo,index) => {
