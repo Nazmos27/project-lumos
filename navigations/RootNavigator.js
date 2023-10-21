@@ -14,6 +14,7 @@ const RootNavigator = () => {
   return (
     <NavigationContainer>
         <Tab.Navigator
+
         initialRouteName='Home'
         screenOptions={({route}) =>({
             tabBarIcon:({focused,color,size}) => {
@@ -26,7 +27,8 @@ const RootNavigator = () => {
                 }
 
                 return <Ionicons name={iconName} size={size} color={color}></Ionicons>
-            }
+            },
+            headerTitleAlign:'center'
         })}
         >
             <Tab.Screen name="Home" component={HomeScreen} />
