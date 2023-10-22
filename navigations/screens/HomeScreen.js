@@ -22,7 +22,7 @@ export default function HomeScreen() {
       <View >
         {data[0].course.map(item => (
           // <Text>{item.name}</Text>
-          <ClassCard data={item}></ClassCard>
+          <ClassCard key={item.code} data={item}></ClassCard>
         ))}
 
     </View>

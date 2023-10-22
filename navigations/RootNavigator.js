@@ -17,16 +17,18 @@ const RootNavigator = () => {
 
         initialRouteName='Home'
         screenOptions={({route}) =>({
-            tabBarIcon:({focused,color,size}) => {
+            tabBarIcon:({focused,size,color}) => {
                 let iconName
                 let rn = route.name
                 if(rn === "Home") {
                     iconName = focused ? "home" : "home-outline"
+                    // path= require('../assets/Lottie/homeIcon.json')
                 }else if(rn === "Todo"){
                     iconName = focused ? "list" : "list-outline"
+                    // path = require('../assets/Lottie/todoIcon.json')
                 }
 
-                return <Ionicons name={iconName} size={size} color={color}></Ionicons>
+                return <Ionicons name={iconName} size={size} color={color} ></Ionicons>
             },
             headerTitleAlign:'center'
         })}

@@ -1,7 +1,12 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
-
+import {Ionicons} from '@expo/vector-icons'
+import AnimatedLottieView from 'lottie-react-native'
 const ClassCard = ({data}) => {
+    
+    const preciseInfo  = data.info.filter(item => item.day === 'sunday')
+    
+    console.log(preciseInfo[0].room)
     
     return (
         <TouchableOpacity style={styles.container} >
@@ -9,7 +14,15 @@ const ClassCard = ({data}) => {
                 <Text>{data.code}</Text>
                 <Text>{data.name}</Text>
                 <Text>{data.instructor}</Text>
-                <Text>{data.time}</Text>
+                
+                <View style={{flexDirection:'row',alignItems:'center'}}>
+                    <Ionicons name='alarm-outline' size={24}></Ionicons>
+                    
+                    {/* <AnimatedLottieView source={require('../../assets/Lottie/animation_lo11qtfr.json')} autoSize style={{height:40,width:40}} autoPlay loop ></AnimatedLottieView> */}
+                    <Text>{preciseInfo[0].time}</Text>
+                </View>
+                
+                
             </View>
         </TouchableOpacity>
         
