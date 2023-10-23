@@ -15,18 +15,16 @@ export default function HomeScreen() {
 
   // console.log("time", time);
   
-
+  const sessionWiseData = data.filter(item => item.semester === "22")
+  console.log("ses",sessionWiseData)
 
   return (
     
       <ScrollView  style={{flex:1}} >
         
-
-        {
-          data.map(item => (
             <View style={{flex:1,zIndex:10,padding:32}}>
               {
-                item.course.map(classInfo => (
+                sessionWiseData[0].course.map(classInfo => (
                   
                   <ClassCard key={classInfo.code} data={classInfo} day={time}></ClassCard>
                   
@@ -35,9 +33,7 @@ export default function HomeScreen() {
               }
             </View>
 
-          ))
-        }
-
+        
       </ScrollView>
     
   )
