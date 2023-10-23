@@ -1,7 +1,6 @@
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View, ScrollView, FlatList } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import routineData from '../../routineData';
-import { GestureHandlerRootView, TouchableOpacity } from 'react-native-gesture-handler';
 import ClassCard from '../../components/ClassSchedulePart/ClassCard';
 import moment from 'moment/moment';
 
@@ -10,24 +9,37 @@ export default function HomeScreen() {
   const data = routineData
 
   const [time, setTime] = useState('')
-    useEffect(()=>{
-        setTime(moment().format('dddd'))
-    },[])
-    
-    console.log(time);
-    console.log(data[0].course)
+  useEffect(() => {
+    setTime(moment().format('dddd'))
+  }, [])
+
+  // console.log("time", time);
+  
 
 
   return (
-    <GestureHandlerRootView style={styles.container}>
-      <View >
-        {data[0].course.map(item => (
-          // <Text>{item.name}</Text>
-          <ClassCard key={item.code} data={item}></ClassCard>
-        ))}
+    
+      <ScrollView  style={{flex:1}} >
+        
 
-    </View>
-    </GestureHandlerRootView>
+        {
+          data.map(item => (
+            <View style={{flex:1,zIndex:10,padding:32}}>
+              {
+                item.course.map(classInfo => (
+                  
+                  <ClassCard key={classInfo.code} data={classInfo} day={time}></ClassCard>
+                  
+
+                ))
+              }
+            </View>
+
+          ))
+        }
+
+      </ScrollView>
+    
   )
 }
 

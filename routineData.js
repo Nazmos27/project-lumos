@@ -5,7 +5,7 @@ export default routineData = [
         semester: "22",
         course:[
             {
-                code: "3201",
+                code: "2201",
                 name:"Administrative Law",
                 instructor : "Dr. Masum Billah",
                 info: [
@@ -105,7 +105,7 @@ export default routineData = [
         course:[
             {
                 code: "3201",
-                name:"Administrative Law",
+                name:"asfasd Law",
                 instructor : "Dr. Masum Billah",
                 info: [
                     {
@@ -128,7 +128,7 @@ export default routineData = [
             },
             {
                 code: "3202",
-                name:"Constitution of USA, UK & India",
+                name:"afdafdasfa",
                 instructor : "Mahmudul Hasan Joy",
                 info: [
                     {
@@ -151,7 +151,7 @@ export default routineData = [
             },
             {
                 code: "3203",
-                name:"Business Law",
+                name:"asfdasfdsaf",
                 instructor : "Sharmin Akter",
                 info: [
                     {
@@ -174,7 +174,7 @@ export default routineData = [
             },
             {
                 code: "3204",
-                name:"Company Law",
+                name:"asfdasf",
                 instructor : "Mahmuda Amir Eva",
                 info: [
                     {
