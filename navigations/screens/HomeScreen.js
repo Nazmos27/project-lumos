@@ -15,6 +15,7 @@ export default function HomeScreen() {
     },[])
     
     console.log(time);
+    console.log(data[0].course)
 
 
   return (

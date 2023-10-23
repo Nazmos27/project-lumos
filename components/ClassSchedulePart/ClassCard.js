@@ -6,7 +6,7 @@ const ClassCard = ({data}) => {
     
     const preciseInfo  = data.info.filter(item => item.day === 'sunday')
     
-    console.log(preciseInfo[0].room)
+    console.log(preciseInfo[0])
     
     return (
         <TouchableOpacity style={styles.container} >
