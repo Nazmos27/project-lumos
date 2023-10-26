@@ -184,7 +184,102 @@ export default routineData = [
                     {
                         day: "wednesday",
                         room: "915",
-                        time: "1.30 - 3.15"
+                        time: "1.30pm - 3.15pm"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id:3,
+        session: "2021-22",
+        semester: "12",
+        course:[
+            {
+                code: "1201",
+                name:"Muslim Law of Inheritance",
+                instructor : "Mr. Yasin Al Razi",
+                info: [
+                    {
+                        day:"monday",
+                        room: "910",
+                        time: "11.15am - 12.05pm"
+                    },
+                    {
+                        day: "tuesday",
+                        room: "917",
+                        time: "8.30am - 9.20pm"
+                    },
+                    {
+                        day: "thursday",
+                        room: "916",
+                        time: "10.20am - 12.05pm"
+                    }
+                ]
+            },
+            {
+                code: "1202",
+                name:"Legal History",
+                instructor : "Mahmuda Amir Eva",
+                info: [
+                    {
+                        day:"tuesday",
+                        room: "916",
+                        time: "9.25am - 10.15am"
+                    },
+                    {
+                        day: "wednesday",
+                        room: "915",
+                        time: "12.10pm - 1.00pm"
+                    },
+                    {
+                        day: "thursday",
+                        room: "915",
+                        time: "8.30am - 10.15am"
+                    }
+                ]
+            },
+            {
+                code: "1203",
+                name:"Law of Contract",
+                instructor : "Ms. Nurunnahar Mazumder",
+                info: [
+                    {
+                        day:"sunday",
+                        room: "917",
+                        time: "8.30am - 10.15am"
+                    },
+                    {
+                        day: "monday",
+                        room: "917",
+                        time: "9.25am - 10.15am"
+                    },
+                    {
+                        day: "wednesday",
+                        room: "915",
+                        time: "8.30am - 9.20am"
+                    }
+                ]
+            },
+            {
+                code: "1204",
+                name:"Liberation Movement of Independence",
+                instructor : "Sarmin Akter",
+                info: [
+                    {
+                        day:"sunday",
+                        room: "910",
+                        time: "11.15am - 1.00pm"
+                    },
+                    {
+                        day: "wednesday",
+                        room: "916",
+                        time: "1.30pm - 2.20pm"
+                    },
+                    {
+                        day: "thursday",
+                        room: "916",
+                        time: "1.30pm - 2.20pm"
                     }
                 ]
             }
