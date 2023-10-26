@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, ScrollView, FlatList } from 'react-native'
+import { Text, StyleSheet, View, ScrollView, FlatList, TouchableOpacity } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import routineData from '../../routineData';
 import ClassCard from '../../components/ClassSchedulePart/ClassCard';
@@ -14,29 +14,43 @@ export default function HomeScreen() {
   }, [])
 
   // console.log("time", time);
-  
+
   const sessionWiseData = data.filter(item => item.semester === "22")
-  console.log("ses",sessionWiseData)
+  console.log("ses", sessionWiseData)
 
-  return (
-    
-      <ScrollView  style={{flex:1}} >
-        
-            <View style={{flex:1,zIndex:10,padding:32}}>
-              {
-                sessionWiseData[0].course.map(classInfo => (
-                  
-                  <ClassCard key={classInfo.code} data={classInfo} day={time}></ClassCard>
-                  
+  if (time === 'Friday' || time === 'Saturday') {
+    return (
+      <TouchableOpacity style={styles.container} >
+        <View style={{ justifyContent: 'center', alignItems: 'center' }} >
+          <Text>
+            No class Today
+          </Text>
+        </View>
+      </TouchableOpacity>
+    )
+  }else{
+    return (
 
-                ))
-              }
-            </View>
-
-        
+      <ScrollView style={{ flex: 1 }} >
+  
+        <View style={{ flex: 1, zIndex: 10, padding: 32 }}>
+          {
+            sessionWiseData[0].course.map(classInfo => (
+  
+              <ClassCard key={classInfo.code} data={classInfo} day={time}></ClassCard>
+  
+  
+            ))
+          }
+        </View>
+  
+  
       </ScrollView>
-    
-  )
+  
+    )
+  }
+
+  
 }
 
 const styles = StyleSheet.create({

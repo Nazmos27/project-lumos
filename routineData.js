@@ -24,8 +24,7 @@ export default routineData = [
                         room: "917",
                         time: "8.30am - 10.15am"
                     }
-                ],
-                time : "11.15am - 12.05pm"
+                ]
             },
             {
                 code: "2202",
@@ -47,8 +46,7 @@ export default routineData = [
                         room: "910",
                         time: "10.20am - 11.10am"
                     }
-                ],
-                time : "12.30pm - 1.45pm"
+                ]
             },
             {
                 code: "2203",
@@ -70,8 +68,7 @@ export default routineData = [
                         room: "no",
                         time: "no"
                     }
-                ],
-                time : "1.50pm - 2.45pm"
+                ]
             },
             {
                 code: "2204",
@@ -93,8 +90,7 @@ export default routineData = [
                         room: "915",
                         time: "1.30 - 3.15"
                     }
-                ],
-                time : "2.50pm - 3.45pm"
+                ]
             }
         ]
     },
@@ -105,95 +101,91 @@ export default routineData = [
         course:[
             {
                 code: "3201",
-                name:"asfasd Law",
-                instructor : "Dr. Masum Billah",
-                info: [
-                    {
-                        day:"sunday",
-                        room: "917",
-                        time: "11.15am - 12.05pm"
-                    },
-                    {
-                        day: "monday",
-                        room: "915",
-                        time: "8.30am - 9.20pm"
-                    },
-                    {
-                        day: "thursday",
-                        room: "917",
-                        time: "8.30am - 10.15am"
-                    }
-                ],
-                time : "11.15am - 12.05pm"
-            },
-            {
-                code: "3202",
-                name:"afdafdasfa",
-                instructor : "Mahmudul Hasan Joy",
+                name:"Intelectual Property Law",
+                instructor : "Mahmuda Amir Eva",
                 info: [
                     {
                         day:"monday",
                         room: "916",
-                        time: "10.20am - 11.10pm"
+                        time: "1.30pm - 2.20pm"
                     },
                     {
                         day: "tuesday",
+                        room: "917",
+                        time: "11.15am - 12.05pm"
+                    },
+                    {
+                        day: "thursday",
+                        room: "915",
+                        time: "11.15am - 1.00pm"
+                    }
+                ]
+            },
+            {
+                code: "3202",
+                name:"Penal Code",
+                instructor : "Mahmudul Hasan Joy",
+                info: [
+                    {
+                        day:"monday",
+                        room: "910",
+                        time: "8.30am - 9.20am"
+                    },
+                    {
+                        day:"tuesday",
                         room: "916",
-                        time: "10.20am - 12.05pm"
+                        time: "8.30am - 9.20am"
                     },
                     {
                         day: "wednesday",
-                        room: "910",
-                        time: "10.20am - 11.10am"
+                        room: "917",
+                        time: "1.30pm - 3.15pm"
                     }
-                ],
-                time : "12.30pm - 1.45pm"
+                ]
             },
             {
                 code: "3203",
-                name:"asfdasfdsaf",
-                instructor : "Sharmin Akter",
+                name:"Equity,Law Of Trusts & Public Demands Recovery",
+                instructor : "Ms. Munira Jahan Sumi",
                 info: [
                     {
-                        day:"sunday",
-                        room: "917",
-                        time: "1.30pm - 3.15pm"
+                        day:"monday",
+                        room: "915",
+                        time: "9.25am - 11.10am"
                     },
                     {
-                        day: "tuesday",
+                        day: "wednesday",
                         room: "916",
-                        time: "1.30pm - 3.15pm"
+                        time: "11.15am - 12.05pm"
                     },
                     {
                         day: "no",
                         room: "no",
                         time: "no"
                     }
-                ],
-                time : "1.50pm - 2.45pm"
+                ]
             },
             {
                 code: "3204",
-                name:"asfdasf",
-                instructor : "Mahmuda Amir Eva",
+                name:"Human Rights",
+                instructor : "Mr. Khair Mahmud",
                 info: [
                     {
-                        day:"monday",
+                        day:"sunday",
                         room: "915",
-                        time: "12.10pm - 1.00pm"
+                        time: "11.15am - 1.00pm"
                     },
                     {
                         day: "tuesday",
-                        room: "910",
-                        time: "8.30am - 9.20am"
+                        room: "917",
+                        time: "12.10pm - 1.00pm"
                     },
                     {
                         day: "wednesday",
-                        room: "915",
-                        time: "1.30 - 3.15"
+                        room: "916",
+                        time: "11.15am - 12.05pm"
                     }
-                ],
-                time : "2.50pm - 3.45pm"
+                ]
             }
         ]
     }

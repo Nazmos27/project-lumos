@@ -19,7 +19,7 @@ const ClassCard = ({data,day}) => {
                         <Ionicons name='alarm-outline' size={24}></Ionicons>
                         
                         {/* <AnimatedLottieView source={require('../../assets/Lottie/animation_lo11qtfr.json')} autoSize style={{height:40,width:40}} autoPlay loop ></AnimatedLottieView> */}
-                        <Text>dfadsa</Text>
+                        <Text>{preciseInfo[0].time}</Text>
                     </View>
                     
                     
