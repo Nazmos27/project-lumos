@@ -1,24 +1,29 @@
-import { Text, StyleSheet, View, ScrollView, FlatList, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, ScrollView, FlatList, TouchableOpacity, TextInput,  } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import routineData from '../../routineData';
 import ClassCard from '../../components/ClassSchedulePart/ClassCard';
 import moment from 'moment/moment';
+import { Picker } from '@react-native-picker/picker';
 
 export default function HomeScreen() {
 
   const data = routineData
 
-  const [time, setTime] = useState('thursday')
+  const [semesterInfo,setSemesterInfo] = useState('12')
+  const [time, setTime] = useState('tuesday')
   // useEffect(() => {
   //   setTime(moment().format('dddd'))
   // }, [])
 
   // console.log("time", time);
 
-  const sessionWiseData = data.filter(item => item.semester === "12")
+  const handleOptionChange = (value) =>{
+    setSemesterInfo(value);
+    console.log(semesterInfo);
+  }
+
+  const sessionWiseData = data.filter(item => item.semester === semesterInfo)
   
-
-
   const sortByTimeData = sessionWiseData[0].course
     .filter((course) =>
       course.info.some((classInfo) => classInfo.day === time.toLowerCase())
@@ -72,9 +77,16 @@ export default function HomeScreen() {
   } else {
     return (
 
-      <ScrollView style={{ flex: 1 }} >
-
-        <View style={{ flex: 1, zIndex: 10, padding: 32 }}>
+      <ScrollView style={{ flex: 1 ,backgroundColor:"#E4F1FF"}} >
+        <View>
+          <Text style={{marginHorizontal:20,marginVertical:10,fontSize:20,fontWeight:"800"}}>Select Your Semester</Text>
+          <Picker style={{backgroundColor: "#BEADFA", marginHorizontal:20}} onValueChange={handleOptionChange} selectedValue={semesterInfo} dropdownIconColor="green" >
+            <Picker.Item label='1st year, 2nd semester' value={"12"}/>
+            <Picker.Item label='2nd year, 2nd semester' value={"22"}/>
+            <Picker.Item label='3rd year, 2nd semester' value={"32"}/>
+          </Picker>
+        </View>
+        <View style={{ flex: 1, padding: 32 }}>
           {
             sortByTimeData.map(item => <ClassCard data={item}></ClassCard>)
           }
@@ -92,8 +104,19 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#5B0888',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  inputArea:{
+    width:'90%',
+    height:50,
+    borderRadius:8,
+    marginTop:40,
+    fontSize:16,
+    borderColor: "black",
+    borderWidth: 2,
+    alignSelf:'center',
+    padding:10
   }
 })

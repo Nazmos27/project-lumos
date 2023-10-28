@@ -19,8 +19,8 @@ const ClassCard = ({data}) => {
             <>
             <TouchableOpacity style={styles.container} >
                 <View style={{justifyContent:'center',alignItems:'center'}} >
-                    <Text style={{position:'relative', left: 120, bottom:10, backgroundColor:"#D85963", padding:3,color:"white", borderRadius:10}}> <Ionicons name='hourglass-outline'></Ionicons> {data.info.duration}</Text>
-                    <Text>{data.code}</Text>
+                    {data.info.duration == "2x" && <Text style={{position:'relative', left: 120, bottom:10, backgroundColor:"#D85963", padding:3,color:"white", borderRadius:10}}> <Ionicons name='hourglass-outline' size={15}></Ionicons> {data.info.duration}</Text>}
+                    <Text style={styles.text}>{data.code}</Text>
                     <Text>{data.name}</Text>
                     <Text>{data.instructor}</Text>
                     
@@ -52,7 +52,7 @@ export default ClassCard
 const styles = StyleSheet.create({
     container:{
         
-        backgroundColor:'#fff',
+        backgroundColor:'#468B97',
         borderRadius:2,
         marginVertical:5,
         paddingVertical:30,
@@ -62,6 +62,13 @@ const styles = StyleSheet.create({
         elevation:6,
         alignItems:'center',
         justifyContent:'center',
+        
        
+    },
+    text:{
+        color: "white",
+        fontSize: 18,
+        fontWeight: "700"
+        
     }
 })
