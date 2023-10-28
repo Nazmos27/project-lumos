@@ -1,14 +1,22 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import {Ionicons} from '@expo/vector-icons'
-const ClassCard = ({data,day}) => {
+const ClassCard = ({data}) => {
 
-    const preciseInfo  = data.info.filter(item => item.day === day.toLowerCase())
+    console.log(data);
+
+    // const preciseInfo  = data.info.filter(item => item.day === day.toLowerCase())
+    // console.log(preciseInfo)
+
+    // const testing = ["10.00am - 11.15am", "11.30am - 12.10pm"]
+    // const an = testing[0].split(" - ")
+    // console.log(an)
     
     // console.log(preciseInfo)
 
-    if(preciseInfo.length != 0){
+    if(data){
         return (
+            <>
             <TouchableOpacity style={styles.container} >
                 <View style={{justifyContent:'center',alignItems:'center'}} >
                     <Text>{data.code}</Text>
@@ -19,12 +27,16 @@ const ClassCard = ({data,day}) => {
                         <Ionicons name='alarm-outline' size={24}></Ionicons>
                         
                         {/* <AnimatedLottieView source={require('../../assets/Lottie/animation_lo11qtfr.json')} autoSize style={{height:40,width:40}} autoPlay loop ></AnimatedLottieView> */}
-                        <Text>{preciseInfo[0].time}</Text>
+                        <Text>{data.info.time}</Text>
                     </View>
                     
                     
                 </View>
             </TouchableOpacity>
+            {/* {testing > data.code ? <View style={styles.container}>
+                <Text>gap time</Text>
+            </View> : null} */}
+            </>
             
         )
     }else{

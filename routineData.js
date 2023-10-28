@@ -162,7 +162,7 @@ export default routineData = [
                     {
                         day: "no",
                         room: "no",
-                        time: "no"
+                        time: "0.00am - 0.00am"
                     }
                 ]
             },
@@ -285,6 +285,7 @@ export default routineData = [
             }
         ]
     },
+    
     
 
 ]
