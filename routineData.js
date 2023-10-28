@@ -12,16 +12,22 @@ export default routineData = [
                     {
                         day:"monday",
                         room: "916",
+                        gap:"no",
+                        duration: "",
                         time: "1.30pm - 2.20pm"
                     },
                     {
                         day: "tuesday",
                         room: "917",
+                        gap:"no",
+                        duration: "",
                         time: "11.15am - 12.05pm"
                     },
                     {
                         day: "thursday",
                         room: "915",
+                        gap:"no",
+                        duration: "2x",
                         time: "11.15am - 1.00pm"
                     }
                 ]
@@ -34,16 +40,22 @@ export default routineData = [
                     {
                         day:"monday",
                         room: "910",
+                        gap:"no",
+                        duration: "",
                         time: "8.30am - 9.20am"
                     },
                     {
                         day:"tuesday",
                         room: "916",
+                        gap:"9.21am - 11.14am",
+                        duration: "",
                         time: "8.30am - 9.20am"
                     },
                     {
                         day: "wednesday",
                         room: "917",
+                        gap:"no",
+                        duration: "2x",
                         time: "1.30pm - 3.15pm"
                     }
                 ]
@@ -56,16 +68,22 @@ export default routineData = [
                     {
                         day:"monday",
                         room: "915",
+                        gap:"11.11am - 1.29pm",
+                        duration: "2x",
                         time: "9.25am - 11.10am"
                     },
                     {
                         day: "wednesday",
                         room: "916",
-                        time: "11.15am - 12.05pm"
+                        gap:"no",
+                        duration: "2x",
+                        time: "9.25am - 11.10am"
                     },
                     {
                         day: "no",
                         room: "no",
+                        gap:"no",
+                        duration: "",
                         time: "no"
                     }
                 ]
@@ -78,16 +96,22 @@ export default routineData = [
                     {
                         day:"sunday",
                         room: "915",
+                        gap:"no",
+                        duration: "",
                         time: "11.15am - 1.00pm"
                     },
                     {
                         day: "tuesday",
                         room: "917",
+                        gap:"no",
+                        duration: "",
                         time: "12.10pm - 1.00pm"
                     },
                     {
                         day: "wednesday",
                         room: "916",
+                        gap:"12.05pm - 1.29pm",
+                        duration: "",
                         time: "11.15am - 12.05pm"
                     }
                 ]
@@ -108,16 +132,22 @@ export default routineData = [
                     {
                         day:"sunday",
                         room: "917",
+                        gap:"12.06pm - 1.29pm",
+                        duration: "",
                         time: "11.15am - 12.05pm"
                     },
                     {
                         day: "monday",
                         room: "915",
+                        gap:"9.21am - 10.19am",
+                        duration: "",
                         time: "8.30am - 9.20pm"
                     },
                     {
                         day: "thursday",
                         room: "917",
+                        gap:"no",
+                        duration: "2x",
                         time: "8.30am - 10.15am"
                     }
                 ]
@@ -130,16 +160,22 @@ export default routineData = [
                     {
                         day:"monday",
                         room: "916",
+                        gap:"11.11am - 12.09pm",
+                        duration: "",
                         time: "10.20am - 11.10pm"
                     },
                     {
                         day: "tuesday",
                         room: "916",
+                        gap:"12.06pm - 1.29pm",
+                        duration: "",
                         time: "10.20am - 12.05pm"
                     },
                     {
                         day: "wednesday",
                         room: "910",
+                        gap:"11.11am - 1.29pm",
+                        duration: "",
                         time: "10.20am - 11.10am"
                     }
                 ]
@@ -152,16 +188,22 @@ export default routineData = [
                     {
                         day:"sunday",
                         room: "917",
+                        gap:"no",
+                        duration: "2x",
                         time: "1.30pm - 3.15pm"
                     },
                     {
                         day: "tuesday",
                         room: "916",
+                        gap:"no",
+                        duration: "2x",
                         time: "1.30pm - 3.15pm"
                     },
                     {
                         day: "no",
                         room: "no",
+                        gap:"no",
+                        duration: "",
                         time: "0.00am - 0.00am"
                     }
                 ]
@@ -174,16 +216,22 @@ export default routineData = [
                     {
                         day:"monday",
                         room: "915",
+                        gap:"no",
+                        duration: "",
                         time: "12.10pm - 1.00pm"
                     },
                     {
                         day: "tuesday",
                         room: "910",
+                        gap:"9.21am - 10.19am",
+                        duration: "",
                         time: "8.30am - 9.20am"
                     },
                     {
                         day: "wednesday",
                         room: "915",
+                        gap:"no",
+                        duration: "2x",
                         time: "1.30pm - 3.15pm"
                     }
                 ]
@@ -203,16 +251,22 @@ export default routineData = [
                     {
                         day:"monday",
                         room: "910",
+                        gap:"no",
+                        duration: "",
                         time: "11.15am - 12.05pm"
                     },
                     {
                         day: "tuesday",
                         room: "917",
+                        gap:"no",
+                        duration: "",
                         time: "8.30am - 9.20pm"
                     },
                     {
                         day: "thursday",
                         room: "916",
+                        gap:"12.06pm - 1.29pm",
+                        duration: "2x",
                         time: "10.20am - 12.05pm"
                     }
                 ]
@@ -225,16 +279,22 @@ export default routineData = [
                     {
                         day:"tuesday",
                         room: "916",
+                        gap:"no",
+                        duration: "",
                         time: "9.25am - 10.15am"
                     },
                     {
                         day: "wednesday",
                         room: "915",
+                        gap:"1.01pm - 1.29pm",
+                        duration: "",
                         time: "12.10pm - 1.00pm"
                     },
                     {
                         day: "thursday",
                         room: "915",
+                        gap:"no",
+                        duration: "2x",
                         time: "8.30am - 10.15am"
                     }
                 ]
@@ -247,16 +307,22 @@ export default routineData = [
                     {
                         day:"sunday",
                         room: "917",
+                        gap:"10.16am - 11.14am",
+                        duration: "2x",
                         time: "8.30am - 10.15am"
                     },
                     {
                         day: "monday",
                         room: "917",
+                        gap:"10.16am - 11.14am",
+                        duration: "",
                         time: "9.25am - 10.15am"
                     },
                     {
                         day: "wednesday",
                         room: "915",
+                        gap:"9.21am - 12.09pm",
+                        duration: "",
                         time: "8.30am - 9.20am"
                     }
                 ]
@@ -269,16 +335,22 @@ export default routineData = [
                     {
                         day:"sunday",
                         room: "910",
+                        gap:"no",
+                        duration: "2x",
                         time: "11.15am - 1.00pm"
                     },
                     {
                         day: "wednesday",
                         room: "916",
+                        gap:"no",
+                        duration: "",
                         time: "1.30pm - 2.20pm"
                     },
                     {
                         day: "thursday",
                         room: "916",
+                        gap:"no",
+                        duration: "",
                         time: "1.30pm - 2.20pm"
                     }
                 ]

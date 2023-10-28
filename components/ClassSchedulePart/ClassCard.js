@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {Ionicons} from '@expo/vector-icons'
 const ClassCard = ({data}) => {
 
-    console.log(data);
+    // console.log(data);
 
     // const preciseInfo  = data.info.filter(item => item.day === day.toLowerCase())
     // console.log(preciseInfo)
@@ -19,6 +19,7 @@ const ClassCard = ({data}) => {
             <>
             <TouchableOpacity style={styles.container} >
                 <View style={{justifyContent:'center',alignItems:'center'}} >
+                    <Text style={{position:'relative', left: 120, bottom:10, backgroundColor:"#D85963", padding:3,color:"white", borderRadius:10}}> <Ionicons name='hourglass-outline'></Ionicons> {data.info.duration}</Text>
                     <Text>{data.code}</Text>
                     <Text>{data.name}</Text>
                     <Text>{data.instructor}</Text>
@@ -33,9 +34,9 @@ const ClassCard = ({data}) => {
                     
                 </View>
             </TouchableOpacity>
-            {/* {testing > data.code ? <View style={styles.container}>
-                <Text>gap time</Text>
-            </View> : null} */}
+            {data.info.gap != "no" ? <View style={styles.container}>
+                <Text>{data.info.gap}</Text>
+            </View> : null}
             </>
             
         )

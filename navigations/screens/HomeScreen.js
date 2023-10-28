@@ -8,24 +8,18 @@ export default function HomeScreen() {
 
   const data = routineData
 
-  const [time, setTime] = useState('Tuesday')
+  const [time, setTime] = useState('thursday')
   // useEffect(() => {
   //   setTime(moment().format('dddd'))
   // }, [])
 
   // console.log("time", time);
 
-  const sessionWiseData = data.filter(item => item.semester === "32")
+  const sessionWiseData = data.filter(item => item.semester === "12")
   
 
 
-  // const mondayClasses = sessionWiseData[0].course.filter((course) =>
-  //   course.info.some((classInfo) => classInfo.day === "tuesday")
-  // );
-  // console.log("tuesday", mondayClasses);
-
-
-  const tuesdayClasses = sessionWiseData[0].course
+  const sortByTimeData = sessionWiseData[0].course
     .filter((course) =>
       course.info.some((classInfo) => classInfo.day === time.toLowerCase())
     )
@@ -35,16 +29,12 @@ export default function HomeScreen() {
     }));
 
 
-  tuesdayClasses.sort((a, b) => {
+  sortByTimeData.sort((a, b) => {
     const parseTime = (time) => {
-      const match = time.match(/(\d+\.\d+)([ap]m)/i);
-
-      
-        const timeStr = match[1]; // "10.30"
-        const ampm = match[2]; // "am" or "pm"
-      
-        
-        console.log(timeStr, ampm);
+      const match = time.match(/(\d+\.\d+)([ap]m)/i);//this is used for spliting 10.30am into "10.30" & "am" string.Notice how it works
+        const timeStr = match[1]; 
+        const ampm = match[2]; 
+        // console.log(timeStr, ampm);
         const [hours, minutes] = timeStr.split(".");
         let totalMinutes = parseInt(hours, 10) * 60 + parseInt(minutes, 10);
 
@@ -54,29 +44,15 @@ export default function HomeScreen() {
 
         return totalMinutes;
       };
-
+      
       return parseTime(a.info.time) - parseTime(b.info.time);
     });
 
 
 
 
-  // // Step 2: Sort the filtered classes by time
-  // mondayClasses.forEach((course) => {
-  //   course.info.sort((a, b) => {
-  //     // Define a function to parse time ranges
-  //     const parseTimeRange = (timeRange) => {
-  //       const [start, end] = timeRange.split(" - ");
-  //       console.log(start, end);
-  //       return new Date(`2023-01-01 ${start}`).getTime() - new Date(`2023-01-01 ${end}`).getTime();
-  //     };
 
-  //     return parseTimeRange(a.time) - parseTimeRange(b.time);
-  //   });
-  // });
-
-
-  console.log("tuesday Classes after sort", tuesdayClasses);
+  // console.log("Classes after sort by time", sortByTimeData);
 
 
 
@@ -100,7 +76,7 @@ export default function HomeScreen() {
 
         <View style={{ flex: 1, zIndex: 10, padding: 32 }}>
           {
-            tuesdayClasses.map(item => <ClassCard data={item}></ClassCard>)
+            sortByTimeData.map(item => <ClassCard data={item}></ClassCard>)
           }
         </View>
 
