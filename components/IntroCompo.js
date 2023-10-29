@@ -1,5 +1,6 @@
 import { Dimensions, Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
+import AnimatedLottieView from 'lottie-react-native'
 
 
 const HEIGHT = Dimensions.get("window").height
@@ -7,11 +8,33 @@ const WIDTH = Dimensions.get("window").width
 const IntroCompo = () => {
 
     const Images = [
-        "https://img.freepik.com/free-psd/flat-design-art-class-template_23-2149629875.jpg?w=826&t=st=1698567403~exp=1698568003~hmac=da992169c6e1ddcd7b65cfd5087a5c8018d4cbc1b143bc7849e152c64cc86589",
-        "https://img.freepik.com/free-psd/arts-handcraft-landing-page-template_23-2149961447.jpg?w=826&t=st=1698567445~exp=1698568045~hmac=e8f59bf1cedff11f96080bd36ff0f9e69416941d1c934b2bc0c02c1e67e3f830",
-        "https://img.freepik.com/free-psd/flat-design-art-class-template_23-2149629875.jpg?w=826&t=st=1698567403~exp=1698568003~hmac=da992169c6e1ddcd7b65cfd5087a5c8018d4cbc1b143bc7849e152c64cc86589",
-        "https://img.freepik.com/free-psd/arts-handcraft-landing-page-template_23-2149961447.jpg?w=826&t=st=1698567445~exp=1698568045~hmac=e8f59bf1cedff11f96080bd36ff0f9e69416941d1c934b2bc0c02c1e67e3f830",
+        require('../assets/Lottie/class.json'),
+        require('../assets/Lottie/announcment.json'),
+        require('../assets/Lottie/animation_lobjyobd.json'),
+        require('../assets/Lottie/boost.json'),
+    ]
 
+    const title = [
+        {
+            path: require('../assets/Lottie/class.json'),
+            heading: "Trace",
+            subheading: "your daily classtime in a more precise and smart way"
+        },
+        {
+            path: require('../assets/Lottie/announcment.json'),
+            heading:"Important",
+            subheading:"notice and announcments under the tip of your finger!"
+        },
+        {
+            path: require('../assets/Lottie/animation_lobjyobd.json'),
+            heading: "Organaize",
+            subheading:"your work to do for the day with the built-in 'ToDo' section"
+        },
+        {
+            path: require('../assets/Lottie/boost.json'),
+            heading:"Boost",
+            subheading:"your productivity through participating different co-curricular activities"
+        }
     ]
 
     const [imgActive, setImgActive] = useState(0)
@@ -35,11 +58,18 @@ const IntroCompo = () => {
             pagingEnabled
             style={styles.wrap}
             >
-                {Images.map((item, index)=> 
-                    <Image key={index} resizeMode='stretch'
-                    style={styles.wrap}
-                    source={{uri:item}}
-                    ></Image>
+                {title.map((item, index)=> 
+                    // <Image key={index} resizeMode='stretch'
+                    // style={styles.wrap}
+                    // source={{uri:item}}
+                    // ></Image>
+                    <View style={[styles.wrap,{flex:1,flexDirection:'row',justifyContent:'center',alignItems:'center'}]}>
+                        <AnimatedLottieView source={item.path} loop style={{width: WIDTH * 0.60}}  autoPlay></AnimatedLottieView>
+                        <View style={{paddingVertical:20,width:WIDTH * 0.30}}>
+                            <Text  style={styles.text}>{item.heading}</Text>
+                            <Text style={{}}>{item.subheading}</Text>
+                        </View>
+                    </View>
                 )}
 
             </ScrollView>
@@ -62,11 +92,13 @@ export default IntroCompo
 
 const styles = StyleSheet.create({
     container:{
-        flex:1
+        flex:1,
+        backgroundColor: "#A7CBD9"
     },
     wrap:{
         height:HEIGHT * 0.33,
-        width: WIDTH
+        width: WIDTH,
+        
     },
     wrapDot:{
         position:'absolute',
@@ -84,5 +116,9 @@ const styles = StyleSheet.create({
         margin: 1,
         color:"white",
         fontSize: 30
+    },
+    text:{
+        fontWeight:"800",
+        fontSize:20
     }
 })

@@ -89,7 +89,7 @@ export default function HomeScreen() {
         </View>
         <View style={{ flex: 1, padding: 32 }}>
           {
-            sortByTimeData.map(item => <ClassCard data={item}></ClassCard>)
+            sortByTimeData.map(item => <ClassCard key={item.code} data={item}></ClassCard>)
           }
         </View>
         <View>
