@@ -8,17 +8,17 @@ export default ClassRoomData = [
     },
     {
         day:"monday",
-        r917: [],
-        r916: [],
+        r917: ["2.25pm - 3.15pm"],
+        r916: ["2.25pm - 3.15pm"],
         r915: [],
-        r910: []
+        r910: ["12.10pm - 3.15pm"]
     },
     {
         day:"tuesday",
         r917: [],
         r916: [],
-        r915: [],
-        r910: []
+        r915: ["9.25am - 10.15am", "12.10pm - 3.15pm"],
+        r910: ["9.25am - 3.15pm"]
     },
     {
         day:"wednesday",
@@ -29,9 +29,9 @@ export default ClassRoomData = [
     },
     {
         day: "thursday",
-        r917: [],
-        r916: [],
-        r915: [],
+        r917: ["10.20am - 12.05pm", "2.25pm- 3.15pm"],
+        r916: ["12.10pm - 1.00pm", "2.25pm-3.15pm"],
+        r915: ["10.20am - 11.10am", "1.30pm - 3.15pm"],
         r910: []
     }
 ]
