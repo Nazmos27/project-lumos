@@ -16,7 +16,7 @@ export default function HomeScreen() {
     setTime(moment().format('dddd'))
   }, [])
 
-  // console.log("time", time);
+  
 
   const handleOptionChange = (value) =>{
     setSemesterInfo(value);
