@@ -4,16 +4,17 @@ import routineData from '../../routineData';
 import ClassCard from '../../components/ClassSchedulePart/ClassCard';
 import moment from 'moment/moment';
 import { Picker } from '@react-native-picker/picker';
+import IntroCompo from '../../components/IntroCompo';
 
 export default function HomeScreen() {
 
   const data = routineData
 
   const [semesterInfo,setSemesterInfo] = useState('12')
-  const [time, setTime] = useState('tuesday')
-  // useEffect(() => {
-  //   setTime(moment().format('dddd'))
-  // }, [])
+  const [time, setTime] = useState('')
+  useEffect(() => {
+    setTime(moment().format('dddd'))
+  }, [])
 
   // console.log("time", time);
 
@@ -90,6 +91,9 @@ export default function HomeScreen() {
           {
             sortByTimeData.map(item => <ClassCard data={item}></ClassCard>)
           }
+        </View>
+        <View>
+          <IntroCompo></IntroCompo>
         </View>
 
 
