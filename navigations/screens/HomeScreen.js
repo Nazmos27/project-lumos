@@ -80,6 +80,9 @@ export default function HomeScreen() {
 
       <ScrollView style={{ flex: 1 ,backgroundColor:"#E4F1FF"}} >
         <View>
+          <IntroCompo></IntroCompo>
+        </View>
+        <View>
           <Text style={{marginHorizontal:20,marginVertical:10,fontSize:20,fontWeight:"800"}}>Select Your Semester</Text>
           <Picker style={{backgroundColor: "#BEADFA", marginHorizontal:20}} onValueChange={handleOptionChange} selectedValue={semesterInfo} dropdownIconColor="green" >
             <Picker.Item label='1st year, 2nd semester' value={"12"}/>
@@ -92,11 +95,7 @@ export default function HomeScreen() {
             sortByTimeData.map(item => <ClassCard key={item.code} data={item}></ClassCard>)
           }
         </View>
-        <View>
-          <IntroCompo></IntroCompo>
-        </View>
-
-
+        
       </ScrollView>
 
     )

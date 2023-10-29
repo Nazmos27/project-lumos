@@ -16,9 +16,10 @@ const RootNavigator = () => {
   return (
     <NavigationContainer>
         <Tab.Navigator
-
+        
         initialRouteName='Home'
         screenOptions={({route}) =>({
+            
             tabBarIcon:({focused,size,color}) => {
                 let iconName
                 let rn = route.name
@@ -39,7 +40,7 @@ const RootNavigator = () => {
             headerTitleAlign:'center'
         })}
         >
-            <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen name="Home" component={HomeScreen}  />
             <Tab.Screen name="Info" component={InfoScreen}/>
             <Tab.Screen name='Notice' component={NoticeScreen}/>
             <Tab.Screen name="Todo" component={TodoScreen} />

@@ -1,4 +1,4 @@
-export default ClassRoomData = [
+export default classRoomData = [
     {
         day:"sunday",
         r917: ["10.20am - 11.10am"],

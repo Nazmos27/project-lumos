@@ -19,23 +19,21 @@ const ClassCard = ({data}) => {
             <>
             <TouchableOpacity style={styles.container} >
                 <View style={{justifyContent:'center',alignItems:'center'}} >
-                    {data.info.duration == "2x" && <Text style={{position:'relative', left: 120, bottom:10, backgroundColor:"#D85963", padding:3,color:"white", borderRadius:10}}> <Ionicons name='hourglass-outline' size={15}></Ionicons> {data.info.duration}</Text>}
+                    {data.info.duration == "2x" && <Text style={{position:'relative', left: 119, bottom:30, backgroundColor:"#D85963", paddingHorizontal:10,paddingVertical:4,color:"white"}}> <Ionicons name='hourglass-outline' size={15}></Ionicons> {data.info.duration}</Text>}
                     <Text style={styles.text}>{data.code}</Text>
-                    <Text>{data.name}</Text>
-                    <Text>{data.instructor}</Text>
+                    <Text style={{color:"white",fontWeight:"800",fontSize:20,textAlign:'center'}}>{data.name}</Text>
+                    <Text style={{color:"white",fontWeight:"800",fontSize:16}}>{data.instructor}</Text>
                     
                     <View style={{flexDirection:'row',alignItems:'center'}}>
-                        <Ionicons name='alarm-outline' size={24}></Ionicons>
-                        
-                        {/* <AnimatedLottieView source={require('../../assets/Lottie/animation_lo11qtfr.json')} autoSize style={{height:40,width:40}} autoPlay loop ></AnimatedLottieView> */}
-                        <Text>{data.info.time}</Text>
+                        <Ionicons style={{color:"white",fontWeight:"800",marginHorizontal:4}} name='alarm-outline' size={26}></Ionicons>
+                        <Text style={{color:"white",fontWeight:"800",fontSize:16}}>{data.info.time}</Text>
                     </View>
                     
                     
                 </View>
             </TouchableOpacity>
             {data.info.gap != "no" ? <View style={styles.container}>
-                <Text>{data.info.gap}</Text>
+                <Text style={{fontSize:16,color:"#FFC436", fontWeight:"700"}}>Gap From ---- {data.info.gap}</Text>
             </View> : null}
             </>
             
@@ -68,7 +66,6 @@ const styles = StyleSheet.create({
     text:{
         color: "white",
         fontSize: 18,
-        fontWeight: "700"
-        
+        fontWeight: "700"  
     }
 })
